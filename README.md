@@ -82,4 +82,3 @@ It will help businesses understand customer behavior, identify patterns, and pre
 ## 📤 Submission Info
 This repository link is submitted as the **official Documentation** for the Graduation Project on the Ministry’s LMS platform.
 
-🕒 **Deadline:** Saturday, November 1st — 11:00 PM
