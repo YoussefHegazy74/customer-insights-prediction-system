@@ -16,7 +16,7 @@ It will help businesses understand customer behavior, identify patterns, and pre
 |------|------|
 | **Youssef Ali Hegazy** | Team Leader – Machine Learning |
 | Osama Essam Azab | Data Preprocessing |
-| Mohammed Hani Ebraheem | Data Collection |
+| Mohammed Hani Ebraheem | Data Collection & PowerBI |
 | Ahmed Tarek Elmenoufy | Database |
 | Tomas Amir Gerges | Airflow |
 | Mostafa Sobhy Mahmoud | Data Warehouse |
