@@ -1,5 +1,12 @@
+# 📊 Customer Churn Analysis - Data Warehouse
+
+![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+![SSIS](https://img.shields.io/badge/SSIS-Visual%20Studio-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
+![ETL](https://img.shields.io/badge/ETL-Pipeline-blue?style=for-the-badge)
+
 ## 📌 Folder Structure
-"""
+
+```text
 DWH/
 │
 ├── DWH_Scripts/
@@ -18,28 +25,24 @@ DWH/
 │   └── ChurnDWH.bak
 │
 └── DataWarehouse_Schema.jpeg
-"""
 
 ⭐ 1. Overview
+This module represents the Data Warehouse layer of the Customer Insights system. It is designed to provide clean, structured, and analytics-ready data for ML models and Dashboards.
 
-This module represents the Data Warehouse layer of the Customer Insights system.
-It includes:
+Key Features:
 
-📊 Star Schema for Customer Churn Analysis
+📊 Star Schema designed for Customer Churn Analysis.
 
-⚙️ ELT Pipelines built using SSIS
+⚙️ ELT Pipelines built using SSIS.
 
-🗄️ DWH SQL Scripts (Dimensions + Fact)
+🗄️ DWH SQL Scripts (Dimensions + Fact tables).
 
-🔁 SCD (Slowly Changing Dimension) logic
+🔁 SCD (Slowly Changing Dimension) logic implementation.
 
-🔌 Lookup transformations for foreign keys
-
-This layer provides clean, structured, and analytics-ready data to be used by the ML and Dashboard teams.
+🔌 Lookup transformations for handling foreign keys.
 
 ⭐ 2. Data Warehouse Schema (Star Model)
-
-The DWH follows a Star Schema centered around FactCustomerChurn with five dimensions:
+The DWH follows a Star Schema architecture centered around FactCustomerChurn, supported by five dimensions:
 
 DimCustomer
 
@@ -52,166 +55,107 @@ DimPaymentMethod
 DimTime
 
 📎 Schema Diagram
-
-Use this path if the image is inside the DWH folder:
-
-![Schema](DataWarehouse_Schema.jpeg)
-
 ⭐ 3. ELT Pipelines (SSIS)
-
 All pipelines follow ELT logic:
 
-Load raw data from source
+Extract: Load raw data from the source.
 
-Apply transformations (lookups, derived columns, SCD)
+Transform: Apply lookups, derived columns, and SCD logic.
 
-Load dimensions → then fact table
+Load: Populate dimensions first, followed by the fact table.
 
 ▶️ 3.1 Control Flow
-![Control Flow](ETL/ETL_Control_Flow.jpg)
+This control flow orchestrates the loading process:
 
+Loads Dimensions: DimCustomer, DimServices, DimContract, DimPaymentMethod.
 
-This control flow loads:
-
-DimCustomer
-
-DimServices
-
-DimContract
-
-DimPaymentMethod
-
-Then loads FactCustomerChurn.
+Loads Fact Table: FactCustomerChurn.
 
 ▶️ 3.2 Data Flow – FactCustomerChurn
-![Fact Data Flow](ETL/ETL_Data_Flow.jpg)
+Handles the insertion of transactional data.
 
+Source: OLE DB Source.
 
-Contains:
+Transformations: Lookup transformations for all FK keys & Derived columns.
 
-OLE DB Source
-
-Lookup transformations for all FK keys
-
-Derived columns
-
-OLE DB Destination
+Destination: OLE DB Destination.
 
 ▶️ 3.3 Data Flow – Payment Method SCD
-![Payment Method SCD](ETL/ETL_Data_Flow_Payment_DIm.jpg)
+Handles historical changes in payment methods.
 
-
-Contains:
-
-Slowly Changing Dimension (SCD Type 2)
-
-Derived Columns
-
-OLE DB Command
-
-Union All
-
-Insert Destination
+Logic: Slowly Changing Dimension (SCD Type 2).
 
 ⭐ 4. SQL Scripts
+Scripts are located under /DWH_Scripts and handle database object creation:
 
-Located under /DWH_Scripts
-
-DimCustomer.sql
-
-DimServices.sql
-
-DimContract.sql
-
-DimPaymentMethod.sql
-
-DimTime.sql
-
-FactCustomerChurn.sql
-
-Scripts include:
-
-Table creation
-
-Primary keys
-
-Identity columns
-
-Foreign keys
-
-SCD logic (where applicable)
+Order,Script Name,Description
+1,DimCustomer.sql,Customer demographics & attributes
+2,DimContract.sql,Contract terms and types
+3,DimPaymentMethod.sql,Payment details (supports SCD)
+4,DimServices.sql,Services subscribed by users
+5,DimTime.sql,Date dimension for time-series analysis
+6,FactCustomerChurn.sql,The central fact table
 
 ⭐ 5. How to Run the DWH
 ✔️ Requirements
+Database: SQL Server
 
-SQL Server
+ETL Tool: SSIS (Visual Studio / SQL Server Data Tools)
 
-SSIS (SQL Server Data Tools)
+Data: Customer dataset loaded into the staging area.
 
-Customer dataset loaded into staging
+▶️ Execution Steps
+(Optional) Restore ChurnDWH.bak if you want a pre-loaded environment.
 
-Optional: Restore ChurnDWH.bak
+Run SQL Scripts: Execute all .sql scripts in order (1 to 6) to create the schema.
 
-▶️ Steps
+Open SSIS Project: Open Package.dtsx in Visual Studio.
 
-Restore the .bak file (optional)
+Configure Connections: Update the connection managers:
 
-Run all .sql scripts to create the schema
+Src_Churn (Source Database)
 
-Open Package.dtsx in SSIS
+Des_ChurnDWH (Destination Data Warehouse)
 
-Update connection managers:
+Run Pipeline: Execute the Sequence Container.
 
-Src_Churn
-
-Des_ChurnDWH
-
-Execute Sequence Container
-
-Verify dimensions + fact load correctly
+Verify: Check SQL Server to ensure dimensions and fact tables are populated.
 
 ⭐ 6. Tools & Technologies
+Database: SQL Server
 
-SQL Server
+ETL: SSIS (SQL Server Integration Services)
 
-SSIS
+Modeling: Star Schema
 
-Star Schema
+Techniques: SCD Type 2, Lookup Transformations
 
-SCD Type 2
+IDE: Visual Studio (SSDT)
 
-Lookup Transformations
-
-Visual Studio (SSDT)
-
-⭐ 7. Responsibilities (Your Work)
-
+⭐ 7. Responsibilities & Credits
 This DWH & ETL module was implemented by:
 
 Mostafa Sobhy Mahmoud
 
 Role: Data Warehouse & ETL Engineer
 
-You implemented:
+Implementation Scope:
 
-DWH Schema design
+✅ DWH Schema Design
 
-ELT pipelines
+✅ ELT Pipeline Development
 
-SCD logic
+✅ SCD Logic Implementation
 
-SQL scripts
+✅ SQL Scripting & Optimization
 
-Fact/dimension loading
-
-ETL orchestration via SSIS
+✅ ETL Orchestration via SSIS
 
 ⭐ 8. Notes
+Ensure all ETL diagrams exist inside the /ETL folder.
 
-All ETL diagrams must exist inside /ETL folder
+This module is self-contained and reusable for similar churn analysis projects.
 
-Update image paths if filenames change
+🎉 End of Documentation
 
-This folder is self-contained and reusable
-
-🎉 End of README
+Components: Derived Columns, OLE DB Command, Union All, and Insert Destination.
