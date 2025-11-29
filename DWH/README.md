@@ -87,14 +87,16 @@ Logic: Slowly Changing Dimension (SCD Type 2).
 
 ⭐ 4. SQL Scripts
 Scripts are located under /DWH_Scripts and handle database object creation:
-
-Order,Script Name,Description
-1,DimCustomer.sql,Customer demographics & attributes
-2,DimContract.sql,Contract terms and types
-3,DimPaymentMethod.sql,Payment details (supports SCD)
-4,DimServices.sql,Services subscribed by users
-5,DimTime.sql,Date dimension for time-series analysis
-6,FactCustomerChurn.sql,The central fact table
+---
+| Order | Script Name | Description |
+|------|------|------|
+| 1 | DimCustomer.sql | Customer demographics & attributes |
+| 2 | DimContract.sql | Contract terms and types |
+| 3 | DimPaymentMethod.sql | Payment details (supports SCD) |
+| 4 | DimServices.sql | Services subscribed by users |
+| 5 | DimTime.sql | Date dimension for time-series analysis |
+| 6 | FactCustomerChurn.sql | The central fact table |
+---
 
 ⭐ 5. How to Run the DWH
 ✔️ Requirements
@@ -157,5 +159,3 @@ Ensure all ETL diagrams exist inside the /ETL folder.
 This module is self-contained and reusable for similar churn analysis projects.
 
 🎉 End of Documentation
-
-Components: Derived Columns, OLE DB Command, Union All, and Insert Destination.
