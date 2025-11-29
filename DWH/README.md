@@ -43,7 +43,7 @@ Key Features:
 
 ⭐ 2. Data Warehouse Schema (Star Model)
 
-![Schema](DataWarehouse_Schema.jpeg)
+![Schema](Data Warehouse Schema.jpeg)
 
 The DWH follows a Star Schema architecture centered around FactCustomerChurn, supported by five dimensions:
 
