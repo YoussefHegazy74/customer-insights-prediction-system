@@ -12,14 +12,14 @@ It will help businesses understand customer behavior, identify patterns, and pre
 
 ## 👥 Group Members & Roles
 
-| Name | Role |
-|------|------|
-| **Youssef Ali Hegazy** | Team Leader – Machine Learning |
-| Osama Essam Azab | Data Preprocessing |
-| Mohammed Hani Ebraheem | Data Collection & Power BI Dashboard |
-| Ahmed Tarek Elmenoufy | Database |
-| Tomas Amir Gerges | Airflow |
-| Mostafa Sobhy Mahmoud | Data Warehouse & ETL - SSIS |
+| Name | Role | LinkedIn |
+|------|------|------|
+| **Youssef Ali Hegazy** | Team Leader – Machine Learning | https://www.linkedin.com/in/youssef-a-hegazy |
+| Osama Essam Azab | Data Preprocessing | - |
+| Ahmed Tarek Elmenoufy | Database | - |
+| Mostafa Sobhy Mahmoud | Data Warehouse & ETL - SSIS | www.linkedin.com/in/shehify |
+| Tomas Amir Gerges | Airflow | - |
+| Mohammed Hani Ebraheem | Data Collection & Power BI Dashboard | - |
 
 ---
 
