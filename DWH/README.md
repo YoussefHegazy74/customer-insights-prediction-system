@@ -1,4 +1,5 @@
 ## 📌 Folder Structure
+"""
 DWH/
 │
 ├── DWH_Scripts/
@@ -17,7 +18,7 @@ DWH/
 │   └── ChurnDWH.bak
 │
 └── DataWarehouse_Schema.jpeg
-
+"""
 
 ⭐ 1. Overview
 
