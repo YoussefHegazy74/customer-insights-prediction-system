@@ -25,7 +25,7 @@ DWH/
 │   └── ChurnDWH.bak
 │
 └── DataWarehouse_Schema.jpeg
-
+```
 ⭐ 1. Overview
 This module represents the Data Warehouse layer of the Customer Insights system. It is designed to provide clean, structured, and analytics-ready data for ML models and Dashboards.
 
@@ -42,9 +42,9 @@ Key Features:
 🔌 Lookup transformations for handling foreign keys.
 
 ⭐ 2. Data Warehouse Schema (Star Model)
-
+```
 ![Schema](Data Warehouse Schema.jpeg)
-
+```
 The DWH follows a Star Schema architecture centered around FactCustomerChurn, supported by five dimensions:
 
 DimCustomer
