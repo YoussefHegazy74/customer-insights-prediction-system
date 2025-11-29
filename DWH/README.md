@@ -42,9 +42,9 @@ Key Features:
 🔌 Lookup transformations for handling foreign keys.
 
 ⭐ 2. Data Warehouse Schema (Star Model)
-```
+
 ![Schema](Data_Warehouse_Schema.jpeg)
-```
+
 The DWH follows a Star Schema architecture centered around FactCustomerChurn, supported by five dimensions:
 
 DimCustomer
@@ -67,9 +67,9 @@ Transform: Apply lookups, derived columns, and SCD logic.
 Load: Populate dimensions first, followed by the fact table.
 
 ▶️ 3.1 Control Flow
-```
+
 ![Control Flow](ETL/ETL_Control_Flow.jpg)
-```
+
 This control flow orchestrates the loading process:
 
 Loads Dimensions: DimCustomer, DimServices, DimContract, DimPaymentMethod.
@@ -77,9 +77,9 @@ Loads Dimensions: DimCustomer, DimServices, DimContract, DimPaymentMethod.
 Loads Fact Table: FactCustomerChurn.
 
 ▶️ 3.2 Data Flow – FactCustomerChurn
-```
+
 ![Fact Data Flow](ETL/ETL_Data_Flow.jpg)
-```
+
 Handles the insertion of transactional data.
 
 Source: OLE DB Source.
@@ -89,9 +89,9 @@ Transformations: Lookup transformations for all FK keys & Derived columns.
 Destination: OLE DB Destination.
 
 ▶️ 3.3 Data Flow – Payment Method SCD
-```
+
 ![Payment Method SCD](ETL/ETL_Data_Flow_Payment_DIm.jpg)
-```
+
 Handles historical changes in payment methods.
 
 Logic: Slowly Changing Dimension (SCD Type 2).
