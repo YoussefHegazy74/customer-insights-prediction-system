@@ -19,7 +19,7 @@ It will help businesses understand customer behavior, identify patterns, and pre
 | Mohammed Hani Ebraheem | Data Collection & Power BI Dashboard |
 | Ahmed Tarek Elmenoufy | Database |
 | Tomas Amir Gerges | Airflow |
-| Mostafa Sobhy Mahmoud | Data Warehouse |
+| Mostafa Sobhy Mahmoud | Data Warehouse & ETL - SSIS |
 
 ---
 
