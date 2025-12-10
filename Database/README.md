@@ -2,8 +2,6 @@
 
 ## **System Overview**
 
-This project focuses on the architectural design of a high-integrity relational database for telecommunications data. Utilizing **Microsoft SQL Server**, the system implements a strictly normalized **Third Normal Form (3NF)** schema to ensure data consistency, reduced redundancy, and optimized storage.
-
 Beyond static storage, the database features **active logic layer** consisting of triggers and constraints that enforce complex business rules, revenue protection, and auditability directly at the database level.
 
 ## **🏗️ Relational Schema Design (OLTP)**
