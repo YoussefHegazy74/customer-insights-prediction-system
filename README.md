@@ -16,7 +16,7 @@ It will help businesses understand customer behavior, identify patterns, and pre
 |------|------|------|
 | **Youssef Ali Hegazy** | Team Leader – Machine Learning | https://www.linkedin.com/in/youssef-a-hegazy |
 | Osama Essam Azab | Data Collection & Data Preprocessing | https://www.linkedin.com/in/osama-essam-azab |
-| Ahmed Tarek Elmenoufy | Database | - |
+| Ahmed Tarek Elmenoufy | Database | www.linkedin.com/in/ahmed-tarek06 |
 | Mostafa Sobhy Mahmoud | Data Warehouse & ETL - SSIS | www.linkedin.com/in/shehify |
 | Tomas Amir Gerges | Airflow | - |
 | Mohammed Hani Ebraheem | Power BI Dashboard | - |
